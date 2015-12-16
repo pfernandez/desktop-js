@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+  </head>
+  <body>
+    <h1>Hello World!</h1>
+    We are using node <script>document.write(process.versions.node)</script>,
+    Chrome <script>document.write(process.versions.chrome)</script>,
+    and Electron <script>document.write(process.versions.electron)</script>.
+    
+    
+    <br><br><br>
+    <div id="holder" style="padding: 40px; border: 2px dashed #000;">
+      Drag your file here to view its path in the console.
+    </div>  
+    <script>
+      var holder = document.getElementById('holder');
+      holder.ondragover = function () {
+        this.style.background = '#ccc';
+        return false;
+      };
+      holder.ondragleave = holder.ondragend = function () {
+        this.style.background = 'inherit';
+        return false;
+      };
+      holder.ondrop = function (e) {
+        e.preventDefault();
+        this.style.background = 'inherit';
+        var file = e.dataTransfer.files[0];
+        console.log('File you dragged here is', file.path);
+        return false;
+      };
+    </script>
+    
+    
+    <br><br><br>
+    <div class="indicator"></div>
+    <webview id="foo" src="https://songnotes.meteor.com/" 
+        style="display: block; height:480px; border: 2px dashed #000;">
+    </webview>
+    <script>
+      onload = function() {
+        var webview = document.getElementById("foo");
+        var indicator = document.querySelector(".indicator");
+
+        var loadstart = function() {
+          indicator.innerText = "loading...";
+        }
+        var loadstop = function() {
+          indicator.innerText = "";
+        }
+        webview.addEventListener("did-start-loading", loadstart);
+        webview.addEventListener("did-stop-loading", loadstop);
+      }
+    </script>
+    
+    <br>
+    <button onclick="window.open('http://soundsrighthere.artsdigital.co/', 'myFrame')">
+      Get audio clips
+    </button>
+      
+  </body>
+</html>
