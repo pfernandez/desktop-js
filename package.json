@@ -1,5 +1,5 @@
 {
-  "name": "electron-quick-start",
+  "name": "desktop-js",
   "version": "1.0.0",
   "description": "A minimal Electron application",
   "main": "main.js",
@@ -8,22 +8,27 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/atom/electron-quick-start.git"
+    "url": "git+https://github.com/pfernandez/desktop-js.git"
   },
   "keywords": [
     "Electron",
     "quick",
     "start",
-    "tutorial"
+    "ractive",
+    "desktop",
+    "node"
   ],
-  "author": "GitHub",
+  "author": "Paul Fernandez",
   "license": "CC0-1.0",
   "bugs": {
-    "url": "https://github.com/atom/electron-quick-start/issues"
+    "url": "https://github.com/pfernandez/desktop-js/issues"
   },
-  "homepage": "https://github.com/atom/electron-quick-start#readme",
+  "homepage": "https://github.com/pfernandez/desktop-js#readme",
   "devDependencies": {
-    "electron-prebuilt": "^0.35.0"
+    "electron-prebuilt": "^0.35.0",
+    "parallelshell": "^2.0.0",
+    "less": "^2.5.3",
+		"browser-reload": "^1.1.0"
   },
 	"dependencies": {
 		"ractive": "0.7.3"

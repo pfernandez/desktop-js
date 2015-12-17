@@ -2,12 +2,15 @@
 
 **The opinion here is that there is no opinion**
 
-This is a minimal set of packages to get a Node.js/HTML5 desktop app up and running ASAP. It is not a framework; you can structure your code however you see fit.
+This is a core set of packages to get a Node.js/HTML5 desktop app up and running ASAP. It is not a framework. You can structure your code however you see fit, and the tools are there to back you up.
 
-More packages will probably be added from time to time, but at the moment it's simply:
+More packages may be added from time to time. At the moment it's:
 
 - [Electron](http://electron.atom.io/) - Node with a custom Chromium frontend
-- [ractive](https://github.com/ractivejs/ractive) - HTML templating and DOM manipulation 
+- [ractive](https://github.com/ractivejs/ractive) - HTML templating and DOM manipulation
+- [less](http://lesscss.org/) - CSS preprocessor
+- [browser-reload](https://github.com/mantoni/browser-reload) - Automatic browser reloads
+- [parallelshell](https://github.com/keithamus/parallelshell) - Run npm scripts in parallel
 
 ## To Use
 
