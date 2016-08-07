@@ -3,64 +3,26 @@
   <head>
     <meta charset="UTF-8">
     <title>Hello World!</title>
-    <script src="reload.min.js"></script><!--remove during production-->
+		<link rel="stylesheet" type="text/css" href="style.css">
+    <script src="node_modules/browser-reload/reload.min.js"></script><!--remove during production-->
   </head>
+
   <body>
     <h1>Hello World!</h1>
-    We are using node <script>document.write(process.versions.node)</script>,
+		<p>We're using Node <script>document.write(process.versions.node)</script>,
     Chrome <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
+		and Electron <script>document.write(process.versions.electron)</script>.</p>
     
+    <div id="finder">Drag your file here to view its path in the console.</div>
     
-    <br><br><br>
-    <div id="holder" style="padding: 40px; border: 2px dashed #000;">
-      Drag your file here to view its path in the console.
-    </div>  
-    <script>
-      var holder = document.getElementById('holder');
-      holder.ondragover = function () {
-        this.style.background = '#ccc';
-        return false;
-      };
-      holder.ondragleave = holder.ondragend = function () {
-        this.style.background = 'inherit';
-        return false;
-      };
-      holder.ondrop = function (e) {
-        e.preventDefault();
-        this.style.background = 'inherit';
-        var file = e.dataTransfer.files[0];
-        console.log('File you dragged here is', file.path);
-        return false;
-      };
-    </script>
+    <div class="portal">
+      <div class="loader hide"></div>
+      <webview id="webview" src="http://github.com" ></webview>
+    </div>
     
-    
-    <br><br><br>
-    <div class="indicator"></div>
-    <webview id="foo" src="https://songnotes.meteor.com/" 
-        style="display: block; height:480px; border: 2px dashed #000;">
-    </webview>
-    <script>
-      onload = function() {
-        var webview = document.getElementById("foo");
-        var indicator = document.querySelector(".indicator");
-
-        var loadstart = function() {
-          indicator.innerText = "loading...";
-        }
-        var loadstop = function() {
-          indicator.innerText = "";
-        }
-        webview.addEventListener("did-start-loading", loadstart);
-        webview.addEventListener("did-stop-loading", loadstop);
-      }
-    </script>
-    
-    <br>
-    <button onclick="window.open('http://soundsrighthere.artsdigital.co/', 'myFrame')">
-      Get audio clips
-    </button>
+    <button class="external" onclick="window.open('http://google.com')">
+      Open an external window</button>
       
+    <script src="script.js"></script>
   </body>
 </html>
