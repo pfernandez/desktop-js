@@ -29,6 +29,10 @@
   display: none;
 }
 
+#webview {
+	height: 100%;
+}
+
 .external {
 	margin: 30px 0;
 }
