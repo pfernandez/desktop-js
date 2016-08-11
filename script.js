@@ -11,7 +11,6 @@
     this.style.background = 'inherit';
   };
   finder.ondrop = function (e) {
-  alert('dropped');
     e.preventDefault();
     this.style.background = 'inherit';
     var file = e.dataTransfer.files[0];
@@ -21,7 +20,7 @@
   
   // Demo: Embedded web page.
   window.onload = function() {
-    var webview = document.getElementById('webview');
+    var webview = document.querySelector('.portal webview');
     var loader = document.querySelector('.loader');
     var loadstart = loadstop = function() {
       loader.classList.toggle('hide');

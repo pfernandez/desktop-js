@@ -10,7 +10,6 @@ More packages may be added from time to time. At the moment it's:
 - [ractive](https://github.com/ractivejs/ractive) - HTML templating and DOM manipulation
 - [less](http://lesscss.org/) - CSS preprocessor
 - [electron-reload](https://github.com/yan-foto/electron-reload) - Automatic browser reloads
-- [parallelshell](https://github.com/keithamus/parallelshell) - Run npm scripts in parallel
 
 ## To Use
 

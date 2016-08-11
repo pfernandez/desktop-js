@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8">
     <title>Hello World!</title>
-		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet/less" type="text/css" href="styles.less" />
+		<script src="node_modules/less/dist/less.js" type="text/javascript"></script>
   </head>
 
   <body>
@@ -16,7 +17,7 @@
     
     <div class="portal">
       <div class="loader hide"></div>
-      <webview id="webview" src="http://github.com" ></webview>
+      <webview src="http://github.com" ></webview>
     </div>
     
     <button class="external" onclick="window.open('http://google.com')">
