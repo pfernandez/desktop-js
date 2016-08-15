@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
   <head>
     <meta charset="UTF-8">
     <title>Hello World!</title>
@@ -8,10 +8,14 @@
   </head>
 
   <body>
-    <h1>Hello World!</h1>
-		<p>We're using Node <script>document.write(process.versions.node)</script>,
-    Chrome <script>document.write(process.versions.chrome)</script>,
-		and Electron <script>document.write(process.versions.electron)</script>.</p>
+    <div id="container"></div>
+    <script id="template" type="text/ractive">
+      <h1>Hello {{name}}!</h1>
+      <p>It's currently {{time}}</p>
+  		<p>We're using Node {{nodeVersion}},
+      Chrome {{chromeVersion}},
+  		and Electron {{electronVersion}}.</p>
+    </script>
     
     <div id="finder">Drag your file here to view its path in the console.</div>
     
@@ -22,7 +26,8 @@
     
     <button class="external" onclick="window.open('http://google.com')">
       Open an external window</button>
-      
+          
+		<script src="node_modules/ractive/ractive.js" type="text/javascript"></script>
     <script src="script.js"></script>
   </body>
 </html>

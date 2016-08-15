@@ -30,4 +30,21 @@
     webview.addEventListener('did-stop-loading', loadstop);
   }
   
+  
+  // Demo: Ractive templating.
+  var ractive = new Ractive({
+    el: '#container',
+    template: '#template',
+    data: {
+      name: 'World',
+      time:  new Date(),
+      nodeVersion:     process.versions.node,
+      chromeVersion:   process.versions.chrome,
+      electronVersion: process.versions.electron,
+    },
+  });
+  setInterval(function() {
+    ractive.set('time', new Date())
+  }, 1000);
+  
 })();
